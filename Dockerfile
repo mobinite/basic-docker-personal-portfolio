@@ -2,4 +2,4 @@
 FROM nginx:alpine
 
 # Copy HTML files to the nginx default public directory
-COPY src /usr/share/nginx/html
+COPY . /usr/share/nginx/html
