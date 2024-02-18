@@ -1,39 +1,44 @@
-A basic html website deploy in docker using nginx alpine
+# A basic html website deploy in docker using nginx alpine
 
-Pre-requisite: 
-    * Install docker in ubuntu
+## Pre-requisite: 
+    Install docker in ubuntu
 
-Process: 
-    * Install Docker: 
-        * run below commands step by step
-            sudo apt-get update
-            sudo apt-get upgrade
-            sudo apt install docker.io -y
-            sudo systemctl enable docker
-            sudo systemctl status docker
-        if it's showing docker is inactive then run the below one
-            sudo systemctl start docker
+### Process: 
+1. Install Docker: 
+run below commands step by step
 
-    installation done. now it's time to check
-       
-        * run below commands
-            docker --version
-                here you can see the docker version
-            docker run hello-world
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install docker.io -y
+sudo systemctl enable docker
+sudo systemctl status docker
+```
 
-Create docker image using html website
+if it's showing docker is inactive then run the below one`sudo systemctl start docker`
 
-git clone https://github.com/mobinite/basic-docker-personal-portfolio.git
+#### installation done. now it's time to check run below commands
+`docker --version`
+here you can see the docker version
+`docker run hello-world`
 
-* To create and run the image follow below commands
-    docker build . -t personal-portfolio:latest
-    docker images
-    docker run -d -p 8080:80 personal-portfolio:latest
-    docker ps -a
+2. Create docker image using html website
 
-Now your html website is running
+`git clone https://github.com/mobinite/basic-docker-personal-portfolio.git`
 
-* To remove it follow below commands
-    docker stop "container ID"
-    docker rm "container ID"
-    docker rmi "image Name"
+### To create and run the image follow below commands
+```
+docker build . -t personal-portfolio:latest
+docker images
+docker run -d -p 8080:80 personal-portfolio:latest
+docker ps -a
+```
+
+3. Now your html website is running
+
+- To remove it follow below commands
+```
+docker stop "container ID"
+docker rm "container ID"
+docker rmi "image Name"
+```
